@@ -16,7 +16,7 @@ mysql_db = {
 	'host': '127.0.0.1',
 	'user': 'root',
 	'password': '',
-	'db_name': 'kw0ngScan',
+	'db_name': '***',
 	'port': 3306,
 	'charset': 'utf8'
 }

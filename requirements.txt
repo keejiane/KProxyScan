@@ -1,0 +1,7 @@
+celery
+BeautifulSoup
+requests
+peewee
+pymongo
+bson
+
