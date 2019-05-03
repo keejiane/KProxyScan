@@ -1,0 +1,8 @@
+flask_sqlalchemy
+flask_bootstrap
+flask_login
+flask_nav
+flask_paginate
+chartkick
+mysql_python
+BeautifulSoup

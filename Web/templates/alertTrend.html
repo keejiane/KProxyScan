@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='highcharts.js') }}"></script>
+<script src="{{ url_for('static', filename='chartkick.js') }}"></script>
+
+<div class="container">
+	<div class="alert alert-info"><h2>AlertTrend</h2></div>
+	<br>
+
+        <ul class="nav nav-tabs">
+		{% for k in ({'id': '0', 'mu': 'Hour'}, {'id': '1', 'mu': 'Day'}, {'id': '3', 'mu': '3-Day'}, {'id': '5', 'mu': 'Week'}, {'id': '7', 'mu': 'Month'}, {'id': '9', 'mu': 'Year'}) %}
+	        
+	    	{% if k.id in active_url %}
+			<li id="{{ k.id }}" class="active">
+	    	{% else %}
+	    		<li id="{{ k.id}}">
+	    	{% endif%}
+	    	<a href="/alertTrend/n/{{ k.id }}">{{ k.mu}}</a></li>
+	    {% endfor %}
+
+          </ul>
+
+<br>
+<div class="alert alert-warning"><h4>Vulnerability Type Ratio</h4> </div>
+<br>
+{% pie_chart mix_count_data with library={"title":"tack Http Response Code","width":"400px"} %}
+
+
+<br>
+<br>
+{% column_chart mix_count_data with library={"title":"tack Http Response Code","width":"400px"} %}
+
+
+<br>
+<div class="alert alert-warning"><h4>Vulnerability Domain Top</h4> </div>
+<br>
+{% bar_chart mix_url_data with style="width:200px; height:20px;" %}
+
+</div>
+{% endblock %}

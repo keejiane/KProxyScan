@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+  <div class="container">
+
+      <h3>Welcome to Kw0ngScan</h3>
+      <br>
+
+	{% if login_is_true %}
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">x</button>
+			<h5>Congratulations! login success. </h5>
+		</div>
+
+	{% else %}	
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">x</button>
+			<h5>Warning! have not login yet. </h5>
+		</div>
+
+
+	{% endif %}
+
+      <div class="alert alert-success">
+      <h2>
+	Kw0ng Scan, A new passive web vulnerability scanner.
+	</h2>
+	</div>
+
+  </div>
+{%- endblock %}

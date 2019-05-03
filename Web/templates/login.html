@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="container">
+
+	<div class="alert alert-info">
+	      <h3>Login into Kw0ngScan</h3>
+
+	</div>
+
+	{% if password_is_wrong %}
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">x</button>
+			<h5>Warning! username or password is error. </h5>
+		</div>
+	{% endif %}
+
+	{% if logout_is_true %}
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">x</button>
+			<h5>Warning! user have logout. </h5>
+		</div>
+	{% endif %}
+
+
+	<form method="POST" action="/login" class="bs-example bs-example-form" role="form">
+
+	<div class="input-group col-sm-offset-2 col-sm-6">
+		<span class="input-group-addon">@</span>
+	 	<input type='text' name='email' id='email' placeholder='username' class="form-control">
+	 </div>
+
+	<div class="input-group col-sm-offset-2 col-sm-6">
+		<span class="input-group-addon">@</span>
+ 		<input type='password' name='pw' id='pw' placeholder='password' class="form-control">
+	</div>
+
+	<br>
+ 	 <div class="col-sm-offset-4 col-sm-6">
+ 	  	<input type='submit' name='submit' class="btn btn-primary btn-lg">
+ 	 </div>
+	</form>
+
+      </div>
+{% endblock %}
+
+
